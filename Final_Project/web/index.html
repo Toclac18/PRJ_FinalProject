@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Background Image Example</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url('https://hcmuni.fpt.edu.vn/Data/Sites/1/media/hinh-gioi-thieu-dai-hoc-fpt/hcm.png');
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                color: #337ab7;
+                font-family: Arial, sans-serif;
+                font-size: 2.5rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                margin-bottom: 500px;
+                margin-left: 1px
+            }
+
+            h1:hover {
+                transform: translateY(-5px); 
+            }
+
+            .logo {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 200px;
+                height: auto;
+                cursor: pointer;
+            }
+
+            .btn {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                padding: 10px 20px;
+                background-color: orange;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.2rem;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn:hover {
+                background-color: darkorange;
+            }
+
+            .no-underline {
+                text-decoration: none; 
+                color: inherit; 
+            }
+
+            .no-underline a {
+                color: orange;
+                text-decoration: none; 
+                cursor: pointer; 
+                display: inline-block; 
+                padding: 15px; 
+                margin-top: 50px;
+            }
+
+            .footer {
+                position: absolute;
+                bottom: 20px;
+                color: #ffffff; 
+                font-family: Arial, sans-serif;
+                font-size: 1.2rem; 
+                font-weight: bold; 
+                text-align: center;
+             
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="no-underline">
+            <a href="home">Welcome to FPT University</a>
+        </h1>
+        <a href="https://fpt.edu.vn/"><img src="https://cdn.ketnoibongda.vn/upload/images/og-image-2020-11-10.png" alt="auto" class="logo"></a>
+        <button class="btn" onclick="redirectToLearnMore()">Learn More</button>
+        <div class="footer">
+            <p>FPT University</p>
+            <p>Education and Training Zone - Hoa Lac Hi-Tech Park - Km29 Thang Long Avenue, Thach That District, Hanoi City</p>
+        </div>
+        <script>
+            function redirectToLearnMore() {
+                sessionStorage.setItem('scrollPosition', window.scrollY);
+                window.location.href = "https://hanoi.fpt.edu.vn/tuyen-sinh-dai-hoc-fpt-2024/?utm_source=FGA&utm_medium=FPTU&utm_campaign=GP3&utm_term=KGP3&utm_content=Ladi%202&gad_source=1&gclid=Cj0KCQiAxOauBhCaARIsAEbUSQRqc1b67Zy4T0UoIOgEKXAwxzbHvfzu8YtVYe5L2x_u3I1yk3U5JP0aAjisEALw_wcB";
+            }
+
+            window.addEventListener('DOMContentLoaded', function () {
+                var scrollPosition = sessionStorage.getItem('scrollPosition');
+                if (scrollPosition) {
+                    window.scrollTo(0, scrollPosition);
+                    sessionStorage.removeItem('scrollPosition');
+                }
+            });
+        </script>
+    </body>
+</html>
